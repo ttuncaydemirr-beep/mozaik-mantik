@@ -1,11 +1,13 @@
 # app CI raporu
 - dal: main
-- commit: 86cd0eeed79b62881b990f2b6585fa8485ed7dcf
-- run: 45013281781 (https://github.com/ttuncaydemirr-beep/mozaik-mantik/actions/runs/45013281781)
-- analyze+test: cancelled
-- build: cancelled
-- emulator-smoke: cancelled
+- commit: 458674a2c05031afbbcec12511e6290cdb018437
+- run: 45013328061 (https://github.com/ttuncaydemirr-beep/mozaik-mantik/actions/runs/45013328061)
+- analyze+test: success
+- build: success
+- emulator-smoke: failure
 - flutter: 3.44.0
 ```
-smoke.txt yok
+pid=YOK
+fatal=0
+sonuc=KALDI
 ```
