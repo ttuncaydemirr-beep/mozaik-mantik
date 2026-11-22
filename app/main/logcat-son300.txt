@@ -1,0 +1,300 @@
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	at android.os.Binder.execTransactInternal(Binder.java:1339)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	at android.os.Binder.execTransact(Binder.java:1275)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: Caused by: android.system.ErrnoException: open failed: ENOENT (No such file or directory)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	at libcore.io.Linux.open(Native Method)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	at libcore.io.ForwardingOs.open(ForwardingOs.java:563)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	at libcore.io.BlockGuardOs.open(BlockGuardOs.java:274)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	at libcore.io.IoBridge.open(IoBridge.java:560)
+11-22 10:10:45.447   518  2507 E RecoverySnapshotStorage: 	... 8 more
+11-22 10:10:45.449   518  2507 W PlatformKeyManager: Platform generation ID was 0 but no entry was present in AndroidKeyStore. Generating fresh key.
+11-22 10:10:45.450   158   158 E keystore2: system/security/keystore2/src/error.rs:180 - system/security/keystore2/src/security_level.rs:684
+11-22 10:10:45.450   158   158 E keystore2: 
+11-22 10:10:45.450   158   158 E keystore2: Caused by:
+11-22 10:10:45.450   158   158 E keystore2:     0: system/security/keystore2/src/security_level.rs:199
+11-22 10:10:45.450   158   158 E keystore2:     1: system/security/keystore2/src/security_level.rs:176: Failed to handle super encryption.
+11-22 10:10:45.450   158   158 E keystore2:     2: system/security/keystore2/src/super_key.rs:762: User ECDH key missing.
+11-22 10:10:45.450   158   158 E keystore2:     3: Error::Rc(r#SYSTEM_ERROR)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: [WrappingKeyManager] InternalRecoveryServiceException during wrapping key generation [CONTEXT service_id=172 ]
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: android.security.keystore.recovery.InternalRecoveryServiceException: Failed to import secret key.
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.wrapUnexpectedServiceSpecificException(RecoveryController.java:783)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.generateKey(RecoveryController.java:569)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at qiw.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at qiw.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):15)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at qfw.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):68)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at com.google.android.gms.auth.folsom.operation.GserviceChangeIntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):8)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at com.google.android.chimera.IntentOperation.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at zhv.onHandleIntent(:com.google.android.gms@231818047@23.18.18 (190800-535401451):4)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at hjm.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at hjl.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):11)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at dfhf.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at java.lang.Thread.run(Thread.java:1012)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: Caused by: android.os.ServiceSpecificException: Failed to import secret key. (code 22)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:3071)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.os.Parcel.createException(Parcel.java:3041)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:3024)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.os.Parcel.readException(Parcel.java:2966)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at com.android.internal.widget.ILockSettings$Stub$Proxy.generateKey(ILockSettings.java:1679)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	at android.security.keystore.recovery.RecoveryController.generateKey(RecoveryController.java:556)
+11-22 10:10:45.451  1459  3295 W RecoverableKeyStoreGms: 	... 12 more
+11-22 10:10:45.472  4248  4413 D BugleRcsEngine: log_saver already enabled
+11-22 10:10:45.484  1459  3071 I ModuleSetMgr: Computing pending module set with APKs: [[AdsFdrDynamite.integ:231004600100000], [Cronetdynamite:231818190800], [Dynamiteloader:231818190000], [Dynamitemodulesa:231818190000], [Dynamitemodulesc:231818190000], [Googlecertificates:231818190000], [Mapsdynamite:231818190000], [Measurementdynamite:231818190000]]
+11-22 10:10:45.489  1459  3071 I ModuleSetMgr: Download of container feature antifingerprinting is disabled.
+11-22 10:10:45.489  1459  3071 I ModuleSetMgr: Download of container feature appsearch_dynamite_impl is disabled.
+11-22 10:10:45.489  1459  3071 I ModuleSetMgr: Download of container feature brella_dynamite is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature cameraconnectivity_impl is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature dck_management is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature easyunlock is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature enterprise is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature enterprise_zt_mp_complete is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature fast_pair is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature game_platform is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature games is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature growth_upgradeparty is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature tflite_dynamite is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature homegraph is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature magictether is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature maps_core is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature mlkit.docscan.crop is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature mlkit.docscan.enhance is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature multipackage_debug is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature payse is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature permissions_debug is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature play_cloud_search is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature semanticlocation_debug is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature tflite_delegate_edgetpu is disabled.
+11-22 10:10:45.490  1459  3071 I ModuleSetMgr: Download of container feature tflite_delegate_test is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Download of container feature tflite_gpu_dynamite is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Download of container feature userstatus_impl is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Download of container feature usonia_iam is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Download of container feature vision.face is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Download of container feature vision.ica is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Download of container feature vision.ocr is disabled.
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Pending container module APKs: []
+11-22 10:10:45.495  1459  3071 I ModuleSetMgr: Pending non-container module APKs: []
+11-22 10:10:45.504  1459  3071 W PackageParser: Unknown element under <manifest>: queries at /data/user_de/0/com.google.android.gms/app_chimera/m/00000000/AdsDynamite.apk Binary XML file line #15
+11-22 10:10:45.508  1459  4602 I GmsDebugLogger: [101] +mlkit.ocr.common:1
+11-22 10:10:45.521  1406  1479 I GCoreUlr: WorldUpdater:com.google.gservices.intent.action.GSERVICES_CHANGED: Ensuring that reporting is stopped because of reasons: (no Google accounts)
+11-22 10:10:45.526   518  1164 I RemoteProvisionSysSvc: getRegistration(android.hardware.security.keymint.IRemotelyProvisionedComponent/default)
+11-22 10:10:45.528   518   518 I RegistrationProxy: onServiceConnected: com.android.rkpdapp.service.RemoteProvisioningService
+11-22 10:10:45.534   518  2309 I RegistrationProxy: IGetRegistrationCallback.onSuccess
+11-22 10:10:45.788     0     0 I servicemanager: Found android.hardware.security.keymint.IRemotelyProvisionedComponent/default in device VINTF manifest.
+11-22 10:10:45.535   518  2349 I RemoteProvisionSysSvc: Fetching key 10131 for client 179597628
+11-22 10:10:45.535   518  2349 I RegistrationProxy: getKeyAsync operation started with callback 163360453
+11-22 10:10:45.536  3784  3868 I RkpdRegistrationBinder: Key requested for : android.hardware.security.keymint.IRemotelyProvisionedComponent/default, clientUid: 1017, keyId: 10131, callback: 9404397
+11-22 10:10:45.536  3784  3868 I RkpdRegistrationBinder: Key successfully assigned to client
+11-22 10:10:45.538   518   518 I RemoteProvisionSysSvc: Successfully fetched key for client 179597628
+11-22 10:10:45.563  1406  1479 I GCoreUlr: Unbound from all signal providers.
+11-22 10:10:45.569  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.593  1459  3071 W PackageParser: Unknown element under <manifest>: queries at /data/user_de/0/com.google.android.gms/app_chimera/m/00000004/DynamiteModulesC.apk Binary XML file line #15
+11-22 10:10:45.596  1406  1406 I GCoreUlr: Unbound from all signal providers.
+11-22 10:10:45.596  1406  1406 I GCoreUlr: Stopping handler for UlrDispSvcFast
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: The extras of the task (com.google.android.gms.ocr.service.ModelCleanUpTaskService:type_[2]) are not valid to be persisted so that the task is not persisted [CONTEXT service_id=218 ]
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: java.lang.IllegalArgumentException: Only the following extra parameter types are supported: Integer, Long, Double, String, Boolean, and nested Bundles with the same restrictions.
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at awaz.e(:com.google.android.gms@231818047@23.18.18 (190800-535401451):10)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at byui.f(:com.google.android.gms@231818047@23.18.18 (190800-535401451):44)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at bytb.n(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at bytb.u(:com.google.android.gms@231818047@23.18.18 (190800-535401451):20)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at bytb.h(:com.google.android.gms@231818047@23.18.18 (190800-535401451):3)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at byot.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):9)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at aced.c(:com.google.android.gms@231818047@23.18.18 (190800-535401451):6)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at aced.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):8)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at acjn.run(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-22 10:10:45.609  1406  3362 W NetworkScheduler: 	at java.lang.Thread.run(Thread.java:1012)
+11-22 10:10:45.651  1406  4143 I Nearby  : [MBleClient] Start ble scanning from NearbyDirect:BluetoothAdapterWrapper, context tag = nearby_messages [CONTEXT service_id=49 ]
+11-22 10:10:45.653  1406  4143 D BluetoothAdapter: isLeEnabled(): ON
+11-22 10:10:45.655  1011  1492 D BtGatt.GattService: stopScan() - queue size =2
+11-22 10:10:45.657  1011  1492 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+11-22 10:10:45.657  1011  1492 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+11-22 10:10:45.657  1011  1316 D BtGatt.ScanManager: handling stopping scan  [ScanClient scanModeApp 2 scanModeUsed 2 [appScanStats com.google.uid.shared:10131]]
+11-22 10:10:45.657  1011  1316 D BtGatt.ScanManager: stop gattClientScanNative
+11-22 10:10:45.657  1011  1316 I bt_stack: [INFO:le_scanning_manager.cc(168)] Scan in shim layer stopped
+11-22 10:10:45.658  1011  1182 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:193 unregister_client: Client unregistered
+11-22 10:10:45.658  1011  1182 I bluetooth: packages/modules/Bluetooth/system/gd/hci/le_address_manager.cc:197 unregister_client: Cancelled address rotation alarm
+11-22 10:10:45.659  1011  3275 D BtGatt.GattService: unregisterScanner() - scannerId=2
+11-22 10:10:45.659  1011  3275 I bt_stack: [INFO:le_scanning_manager.cc(162)] Unregister in shim layer, scanner_id:2
+11-22 10:10:45.660  1406  4143 I Nearby  : [MBleClient] M hardware scan: 1 clients, scanMode= OPPORTUNISTIC, filters size = 5 [CONTEXT service_id=49 ]
+11-22 10:10:45.660  1406  4143 D BluetoothAdapter: isLeEnabled(): ON
+11-22 10:10:45.660  1011  1316 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-22 10:10:45.660  1011  1248 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-22 10:10:45.660  1011  1248 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-22 10:10:45.660  1011  1316 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-22 10:10:45.660  1011  1248 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-22 10:10:45.660  1011  1248 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-22 10:10:45.660  1011  1316 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-22 10:10:45.660  1011  1248 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-22 10:10:45.661  1011  1248 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-22 10:10:45.661  1011  1316 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-22 10:10:45.661  1011  1248 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-22 10:10:45.661  1011  1248 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-22 10:10:45.661  1011  1316 I bt_stack: [INFO:le_scanning_manager.cc(204)] ScanFilterParamSetup in shim layer
+11-22 10:10:45.661  1011  1248 D BtGatt.GattService: onScanFilterParamsConfigured() - clientIf=2, status=0, action=0, availableSpace=0
+11-22 10:10:45.661  1011  1248 D BtGatt.ScanManager: callback done for scannerId - 2 status - 0
+11-22 10:10:45.661  1011  1316 D BtGatt.ScanManager: configureRegularScanParams() - queue=1
+11-22 10:10:45.661  1011  1316 D BtGatt.ScanManager: configureRegularScanParams() - queue empty, scan stopped
+11-22 10:10:45.662  1011  3275 D BtGatt.GattService: registerScanner() - UUID=7ec3a6e9-ff66-47c8-92eb-abdee55cf726
+11-22 10:10:45.663  1011  3275 I bt_stack: [INFO:le_scanning_manager.cc(155)] RegisterScanner in shim layer
+11-22 10:10:45.664  1011  1248 D BtGatt.GattService: onScannerRegistered() - UUID=7ec3a6e9-ff66-47c8-92eb-abdee55cf726, scannerId=2, status=0
+11-22 10:10:45.664  1406  2878 D BluetoothLeScanner: onScannerRegistered() - status=0 scannerId=2 mScannerId=0
+11-22 10:10:45.664  1011  3275 D BtGatt.GattService: start scan with filters
+11-22 10:10:45.665  1011  3275 D BtGatt.GattService: enforcePrivilegedPermissionIfNeeded([BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=224, mManufacturerData=[0, 0, 0], mManufacturerDataMask=[0, 0, -1], mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000fef3-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000feaa-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=0000fea0-0000-1000-8000-00805f9b34fb, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=-1, mManufacturerData=null, mManufacturerDataMask=null, mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null], BluetoothLeScanFilter [mDeviceName=null, mDeviceAddress=null, mUuid=null, mUuidMask=null, mServiceSolicitationUuid=null, mServiceSolicitationUuidMask=null, mServiceDataUuid=null, mServiceData=null, mServiceDataMask=null, mManufacturerId=76, mManufacturerData=[2, 21], mManufacturerDataMask=[-1, -1], mAdvertisingDataType=-1, mAdvertisingData=null, mAdvertisingDataMask=null, mTransportBlockFilter=null]])
+11-22 10:10:45.667  1011  3275 D BtGatt.ScanManager: startScan()  [ScanClient scanModeApp -1 scanModeUsed -1 [appScanStats com.google.uid.shared:10131]]
+11-22 10:10:45.667  1011  3275 D ActivityAttributionService: notifyActivityAttributionInfo UID=1002 packageName=com.google.android.bluetooth deviceAddress=no_active_device_address
+11-22 10:10:45.667  1011  3275 I bt_btif : packages/modules/Bluetooth/system/btif/src/bluetooth.cc:829 get_profile_interface: get_profile_interface: id = activity_attribution
+11-22 10:10:45.667  1011  1316 D BtGatt.ScanManager: handling starting scan
+11-22 10:10:45.668  1406  3362 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.checkin.CheckinService started execution. cause:5 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:45.687  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.692  1406  3362 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.checkin.CheckinService finished executing. cause:5 result: 3 elapsed_millis: 25 uptime_millis: 25 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:45.742  1406  1479 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.clearcut.uploader.QosUploaderService started execution. cause:5 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:45.746  1459  3669 I Icing   : Indexing com.google.android.gms-internal.3p:MobileApplication from com.google.android.gms
+11-22 10:10:45.750  1459  3669 I Icing   : Indexing done com.google.android.gms-internal.3p:MobileApplication
+11-22 10:10:45.762  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.763  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.786  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.787  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.796  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.797  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.805  1406  2200 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.clearcut.uploader.QosUploaderService finished executing. cause:5 result: 1 elapsed_millis: 81 uptime_millis: 81 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:45.813  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.813  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:46.087     0     0 I logd    : start watching /data/system/packages.list ...
+11-22 10:10:46.090     0     0 I logd    : ReadPackageList, total packages: 200
+11-22 10:10:45.840  3053  3650 D TrafficStats: tagSocket(125) with statsTag=0x1809, statsUid=-1
+11-22 10:10:45.841  3053  3650 D TrafficStats: tagSocket(125) with statsTag=0x1809, statsUid=-1
+11-22 10:10:45.842  3053  3650 D TrafficStats: tagSocket(125) with statsTag=0x1809, statsUid=-1
+11-22 10:10:45.843  3053  3053 W binder:3053_5: type=1400 audit(0.0:33): avc:  denied  { read } for  name="u:object_r:system_adbd_prop:s0" dev="tmpfs" ino=292 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:system_adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-22 10:10:45.852  3053  3650 W libc    : Access denied finding property "persist.adb.tls_server.enable"
+11-22 10:10:45.858  3053  3650 W libc    : Access denied finding property "service.adb.tls.port"
+11-22 10:10:45.851  3053  3053 W binder:3053_5: type=1400 audit(0.0:34): avc:  denied  { read } for  name="u:object_r:adbd_prop:s0" dev="tmpfs" ino=60 scontext=u:r:gmscore_app:s0:c512,c768 tcontext=u:object_r:adbd_prop:s0 tclass=file permissive=0 app=com.google.android.gms
+11-22 10:10:45.864  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.864  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.888  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.889  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.899  1406  2200 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:45.902  3053  4194 W SystemServiceRegistry: No service published for: persistent_data_block
+11-22 10:10:45.906  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.907  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.917  1459  3669 I Icing   : Indexing com.google.android.gms-apps from com.google.android.gms
+11-22 10:10:45.922  1459  3669 I Icing   : Indexing done com.google.android.gms-apps
+11-22 10:10:45.923  1406  3552 W DroidguardProvider: droidguard took a lot of time : 630 millis [CONTEXT service_id=257 ]
+11-22 10:10:45.933  1406  3552 D CompatibilityChangeReporter: Compat change id reported: 247079863; UID 10131; state: DISABLED
+11-22 10:10:45.966  3053  3650 W SystemServiceRegistry: No service published for: persistent_data_block
+11-22 10:10:45.969  1459  1502 I Checkin : [CheckinOperation] Starting Checkin: Default Task Reason : 8 Force : false UserId : 0 Start time : 56512
+11-22 10:10:45.970  1459  1502 I CheckinUtil: Classify the device as Phone. [CONTEXT service_id=130 ]
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=10170, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=<unknown>, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1720722121, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=192000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/ringtones/Perseus.ogg, _size=236343, album=ringtones, genre=null, is_alarm=0, title=Perseus, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:456)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:938)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:928)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:834)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:319)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:435)
+11-22 10:10:45.976  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:398)
+11-22 10:10:45.985   335  4616 I resolv  : GetAddrInfoHandler::run: {100 786532 100 983140 10131 0}
+11-22 10:10:45.989  1406  1479 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 90 uptime_millis: 90 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:387)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:246)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-22 10:10:45.990  1618  2408 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+11-22 10:10:46.250     0     0 I logd    : logdr: UID=2000 GID=2000 PID=4614 n tail=0 logMask=99 pid=0 start=0ns deadline=0ns
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: Failed to apply ContentProviderOperation(type=insert uri=content://media/internal/file values={instance_id=null, compilation=null, disc_number=null, duration=3498, is_ringtone=1, album_artist=null, resolution=null, orientation=null, artist=<unknown>, author=null, height=null, is_drm=0, is_audiobook=0, date_modified=1720722121, writer=null, composer=null, _modifier=3, is_recording=0, datetaken=null, mime_type=audio/ogg, is_notification=0, bitrate=80000, cd_track_number=null, xmp=[], year=null, _data=/product/media/audio/ringtones/CanisMajor.ogg, _size=31133, album=ringtones, genre=null, is_alarm=0, title=Canis Major, track=null, width=null, is_music=0, document_id=null, is_podcast=0, capture_framerate=null, num_tracks=1, original_document_id=null, media_type=2} exceptionAllowed)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: android.database.sqlite.SQLiteConstraintException: UNIQUE constraint failed: files._data (code 2067 SQLITE_CONSTRAINT_UNIQUE)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.nativeExecuteForLastInsertedRowId(Native Method)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteConnection.executeForLastInsertedRowId(SQLiteConnection.java:961)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteSession.executeForLastInsertedRowId(SQLiteSession.java:790)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.database.sqlite.SQLiteStatement.executeInsert(SQLiteStatement.java:89)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.DatabaseUtils.executeInsert(DatabaseUtils.java:456)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:611)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.lambda$insert$1(SQLiteQueryBuilder.java:575)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.$r8$lambda$z6PmNgi8nEawad46M5nyYc14aRM(SQLiteQueryBuilder.java:0)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder$$ExternalSyntheticLambda4.apply(R8$$SyntheticClass:0)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.util.SQLiteQueryBuilder.insert(SQLiteQueryBuilder.java:574)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.lambda$insertAllowingUpsert$20(MediaProvider.java:4846)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.$r8$lambda$A8_bSAcDGkyGiCcvRo57xoMQkf8(MediaProvider.java:0)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider$$ExternalSyntheticLambda39.apply(R8$$SyntheticClass:0)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.DatabaseHelper.runWithTransaction(DatabaseHelper.java:850)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertAllowingUpsert(MediaProvider.java:4836)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertFile(MediaProvider.java:4818)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insertInternal(MediaProvider.java:5287)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.insert(MediaProvider.java:4980)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.content.ContentProviderOperation.applyInternal(ContentProviderOperation.java:375)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.content.ContentProviderOperation.apply(ContentProviderOperation.java:347)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2653)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.applyBatch(MediaProvider.java:5339)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.content.ContentProvider.applyBatch(ContentProvider.java:2644)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at android.content.ContentResolver.applyBatch(ContentResolver.java:2246)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.applyPending(ModernMediaScanner.java:938)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.maybeApplyPending(ModernMediaScanner.java:928)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:834)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.visitFile(ModernMediaScanner.java:319)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2670)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at java.nio.file.Files.walkFileTree(Files.java:2742)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.walkFileTree(ModernMediaScanner.java:435)
+11-22 10:10:46.003  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.runInternal(ModernMediaScanner.java:398)
+11-22 10:10:46.007   335  4618 I resolv  : res_nmkquery: (QUERY, IN, A)
+11-22 10:10:46.007   335  4618 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x77fdd3ceb110
+11-22 10:10:46.007   335  4618 I resolv  : doQuery: rcode=0, ancount=8, return value=177
+11-22 10:10:46.009   335  4617 I resolv  : res_nmkquery: (QUERY, IN, AAAA)
+11-22 10:10:46.010   335  4617 I resolv  : resolv_cache_lookup: FOUND IN CACHE entry=0x77fca3cf0f90
+11-22 10:10:46.010   335  4617 I resolv  : doQuery: rcode=0, ancount=8, return value=273
+11-22 10:10:46.027  1406  2200 D TrafficStats: tagSocket(256) with statsTag=0x30008100, statsUid=-1
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner$Scan.run(ModernMediaScanner.java:387)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.scan.ModernMediaScanner.scanDirectory(ModernMediaScanner.java:246)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaProvider.scanDirectory(MediaProvider.java:1939)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:204)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onScanVolume(MediaService.java:172)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at com.android.providers.media.MediaService.onHandleWork(MediaService.java:95)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:396)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at androidx.core.app.JobIntentService$CommandProcessor.doInBackground(JobIntentService.java:387)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at android.os.AsyncTask$3.call(AsyncTask.java:394)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:644)
+11-22 10:10:46.035  1618  2408 W ModernMediaScanner: 	at java.lang.Thread.run(Thread.java:1012)
+11-22 10:10:46.049  1406  2200 W Conscrypt: Could not set socket write timeout: java.net.SocketException: Socket closed
+11-22 10:10:46.060  1406  2200 W Conscrypt: 	at com.google.android.gms.org.conscrypt.Platform.setSocketWriteTimeout(:com.google.android.gms@231818047@23.18.18 (190800-535401451):2)
+11-22 10:10:46.065  1406  2200 W Conscrypt: 	at com.google.android.gms.org.conscrypt.ConscryptFileDescriptorSocket.setSoWriteTimeout(:com.google.android.gms@231818047@23.18.18 (190800-535401451):0)
+11-22 10:10:46.065  1406  1479 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:46.066  1406  1479 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 46 uptime_millis: 46 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:46.109  1406  3362 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService started execution. cause:5 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
+11-22 10:10:46.114  1406  3495 I TapAndPay: Disabling TapAndPay HCE service [CONTEXT service_id=79 ]
+11-22 10:10:46.131  1406  1479 I NetworkScheduler.Stats: Task com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService finished executing. cause:5 result: 1 elapsed_millis: 39 uptime_millis: 39 exec_start_elapsed_seconds: 56 [CONTEXT service_id=218 ]
