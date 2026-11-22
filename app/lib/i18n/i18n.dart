@@ -17,7 +17,7 @@ String pickLang(Iterable<Locale> deviceLocales) {
   return kFallbackLang;
 }
 
-/// assets/i18n/<dil>.json düz sözlüğü. Eksik anahtarda İngilizceye, o da yoksa
+/// `assets/i18n/<dil>.json` düz sözlüğü. Eksik anahtarda İngilizceye, o da yoksa
 /// anahtarın kendisine düşer. Türkçe için büyük harf dönüşümü yapılmaz.
 class I18n {
   I18n(this.lang, this._map, this._fallback);
