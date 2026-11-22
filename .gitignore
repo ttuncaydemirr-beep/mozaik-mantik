@@ -1,0 +1,10 @@
+web/dist/
+web/test/shots/
+node_modules/
+__pycache__/
+*.jks
+*.keystore
+key.properties
+app/build/
+app/.dart_tool/
+packages/*/.dart_tool/
