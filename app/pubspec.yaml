@@ -11,9 +11,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  # Saf Dart oyun çekirdeği (dart-mantik dalında yazılıyor). Paket main'e
-  # girince aşağıdaki satırın yorumunu kaldır:
-  # mozaik_core: {path: ../packages/mozaik_core}
+  # Saf Dart oyun çekirdeği (çözücü, oyun, ekonomi, günlük, kayıt):
+  mozaik_core:
+    path: ../packages/mozaik_core
 
 dev_dependencies:
   flutter_test:

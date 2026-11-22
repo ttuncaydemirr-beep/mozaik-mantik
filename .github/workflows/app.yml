@@ -5,6 +5,7 @@ on:
     branches-ignore: [ci-ciktilar]
     paths:
       - "app/**"
+      - "packages/**"
       - "i18n/**"
       - "design/tokens-a.css"
       - "design/fonts/**"
