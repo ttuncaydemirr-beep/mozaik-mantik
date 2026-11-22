@@ -8,10 +8,15 @@ FAIL=0
 
 adb install -r "$APK" || { echo "APK kurulamadı"; exit 2; }
 adb logcat -c
-adb shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1
-sleep 20
-
-PID="$(adb shell pidof "$PKG" | tr -d '\r')"
+# Emülatör açılışı yavaş olabiliyor: başlatmayı 3 kez dene (ilk denemede monkey bazen etkisiz kalıyor)
+PID=""
+for TRY in 1 2 3; do
+  adb shell monkey -p "$PKG" -c android.intent.category.LAUNCHER 1 >/dev/null 2>&1
+  sleep 20
+  PID="$(adb shell pidof "$PKG" | tr -d '\r')"
+  [ -n "$PID" ] && break
+  echo "Deneme $TRY: süreç yok, yeniden başlatılıyor"
+done
 adb logcat -d > "$OUT/logcat.txt" 2>&1
 adb exec-out screencap -p > "$OUT/ekran.png"
 
