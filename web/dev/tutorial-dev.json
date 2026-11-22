@@ -1,0 +1,1 @@
+{"version":1,"levels":[{"id":"t-001","pack":"tut","n":4,"regions":"CCADCCDDCCDDBBBB","solution":[2,0,3,1],"tech":1,"steps":4},{"id":"t-002","pack":"tut","n":5,"regions":"BBBAABDEEABBEEABBCCACCCCC","solution":[4,1,3,0,2],"tech":1,"steps":5},{"id":"t-003","pack":"tut","n":6,"regions":"EEECCFEEECCCDDBCCCDDAACCDDDACADDDAAA","solution":[5,0,2,4,1,3],"tech":1,"steps":6}]}

@@ -1,0 +1,89 @@
+/* Mozaik Mantık — görsel kimlik tokenları, Yön B: Kobalt Sır
+   Açık tema = :root, koyu tema = [data-theme="dark"]. --p0..--p9: bölge desenleri (background-image, 12x12 döşeme, background-size:12px 12px).
+   Kullanım: .cell{background-color:var(--r3);background-image:var(--p3)} — desen modu kapalıyken background-image:none.
+   Yazı tipleri: ../design/fonts/ içindeki dosyalar @font-face ile gömülür (aşağıda). */
+@font-face{font-family:'Onest';src:url('fonts/Onest-VF.ttf') format('truetype');font-weight:100 900;font-display:swap}
+@font-face{font-family:'El Messiri';src:url('fonts/ElMessiri-VF.ttf') format('truetype');font-weight:400 700;font-display:swap}
+@font-face{font-family:'Noto Kufi Arabic';src:url('fonts/NotoKufiArabic-VF.ttf') format('truetype');font-weight:100 900;font-display:swap}
+:root{
+  --font-ui: 'Onest', 'Noto Kufi Arabic', system-ui, sans-serif;
+  --font-display: 'Onest', 'Noto Kufi Arabic', system-ui, sans-serif;
+  --radius: 10px;
+  --shadow: 0 1px 0 rgba(12,27,54,.10), 0 6px 16px rgba(12,27,54,.14);
+  --dur-place: 140ms; --dur-mark: 100ms; --dur-conflict: 260ms; --dur-win: 700ms; --dur-theme: 200ms;
+  --ease: cubic-bezier(.2,.8,.2,1);
+}
+:root{
+  --bg: #EEF3F7;
+  --surface: #FFFFFF;
+  --surface-2: #DCE6EE;
+  --text: #0C1B36;
+  --text-2: #46556E;
+  --accent: #0B6E75;
+  --accent-ink: #FFFFFF;
+  --success: #1A7A45;
+  --danger: #C0201A;
+  --grid-line: rgba(255,255,255,.45);
+  --region-border: #F4F7FA;
+  --stone: #FFFFFF;
+  --stone-ink: #0C1B36;
+  --mark: #FFFFFF;
+  --r0: #2457B3; /* Kobalt · desen: nokta */
+  --r1: #0E7C86; /* Turkuaz · desen: yatay çizgi */
+  --r2: #C2412D; /* Mercan · desen: dikey çizgi */
+  --r3: #1F7F4C; /* Zümrüt · desen: çapraz / */
+  --r4: #A87500; /* Altın · desen: çapraz \ */
+  --r5: #6D3F98; /* Mor/Patlıcan · desen: ızgara */
+  --r6: #B03470; /* Karanfil pembe · desen: dalga */
+  --r7: #556008; /* Zeytin · desen: dama */
+  --r8: #2F6FA8; /* Gök · desen: artı */
+  --r9: #8A4E2B; /* Toprak/Tuğla · desen: baklava */
+  --p0: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Ccircle%20cx=%226%22%20cy=%226%22%20r=%221.7%22%20fill=%22%23FFFFFF%22%20fill-opacity=%220.5%22/%3E%3C/svg%3E");
+  --p1: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%206H12%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p2: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M6%200V12%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p3: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M-1%2013L13%20-1M-1%207L7%20-1M5%2013L13%205%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p4: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M-1%20-1L13%2013M5%20-1L13%207M-1%205L7%2013%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p5: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%206H12M6%200V12%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.1%22/%3E%3C/svg%3E");
+  --p6: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%206Q3%202%206%206T12%206%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p7: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Crect%20x=%220%22%20y=%220%22%20width=%226%22%20height=%226%22%20fill=%22%23FFFFFF%22%20fill-opacity=%220.5%22/%3E%3Crect%20x=%226%22%20y=%226%22%20width=%226%22%20height=%226%22%20fill=%22%23FFFFFF%22%20fill-opacity=%220.5%22/%3E%3C/svg%3E");
+  --p8: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M6%202.5V9.5M2.5%206H9.5%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.7%22/%3E%3C/svg%3E");
+  --p9: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M6%20.8L11.2%206L6%2011.2L.8%206Z%22%20stroke=%22%23FFFFFF%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.3%22/%3E%3C/svg%3E");
+  --p-conflict: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%209L3%203L6%209L9%203L12%209%22%20stroke=%22%23FFFFFF%22%20stroke-width=%221.8%22%20fill=%22none%22/%3E%3C/svg%3E");
+}
+[data-theme="dark"]{
+  --bg: #0A1424;
+  --surface: #122038;
+  --surface-2: #1B2E50;
+  --text: #EAF1F7;
+  --text-2: #A9B8CC;
+  --accent: #4FD1C5;
+  --accent-ink: #04201D;
+  --success: #5FD18E;
+  --danger: #FF8576;
+  --grid-line: rgba(234,241,247,.32);
+  --region-border: #EAF1F7;
+  --stone: #F4F7FA;
+  --stone-ink: #0A1424;
+  --mark: #F4F7FA;
+  --r0: #1C4590; /* Kobalt · desen: nokta */
+  --r1: #0B6670; /* Turkuaz · desen: yatay çizgi */
+  --r2: #A33322; /* Mercan · desen: dikey çizgi */
+  --r3: #176A3E; /* Zümrüt · desen: çapraz / */
+  --r4: #8A6000; /* Altın · desen: çapraz \ */
+  --r5: #573079; /* Mor/Patlıcan · desen: ızgara */
+  --r6: #8E2A5A; /* Karanfil pembe · desen: dalga */
+  --r7: #3F4B00; /* Zeytin · desen: dama */
+  --r8: #245A8C; /* Gök · desen: artı */
+  --r9: #7A4A28; /* Toprak/Tuğla · desen: baklava */
+  --p0: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Ccircle%20cx=%226%22%20cy=%226%22%20r=%221.7%22%20fill=%22%23EAF1F7%22%20fill-opacity=%220.5%22/%3E%3C/svg%3E");
+  --p1: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%206H12%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p2: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M6%200V12%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p3: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M-1%2013L13%20-1M-1%207L7%20-1M5%2013L13%205%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p4: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M-1%20-1L13%2013M5%20-1L13%207M-1%205L7%2013%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p5: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%206H12M6%200V12%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.1%22/%3E%3C/svg%3E");
+  --p6: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%206Q3%202%206%206T12%206%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.6%22/%3E%3C/svg%3E");
+  --p7: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Crect%20x=%220%22%20y=%220%22%20width=%226%22%20height=%226%22%20fill=%22%23EAF1F7%22%20fill-opacity=%220.5%22/%3E%3Crect%20x=%226%22%20y=%226%22%20width=%226%22%20height=%226%22%20fill=%22%23EAF1F7%22%20fill-opacity=%220.5%22/%3E%3C/svg%3E");
+  --p8: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M6%202.5V9.5M2.5%206H9.5%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.7%22/%3E%3C/svg%3E");
+  --p9: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M6%20.8L11.2%206L6%2011.2L.8%206Z%22%20stroke=%22%23EAF1F7%22%20stroke-opacity=%220.5%22%20fill=%22none%22%20stroke-width=%221.3%22/%3E%3C/svg%3E");
+  --p-conflict: url("data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20width=%2212%22%20height=%2212%22%20viewBox=%220%200%2012%2012%22%3E%3Cpath%20d=%22M0%209L3%203L6%209L9%203L12%209%22%20stroke=%22%23FFFFFF%22%20stroke-width=%221.8%22%20fill=%22none%22/%3E%3C/svg%3E");
+}

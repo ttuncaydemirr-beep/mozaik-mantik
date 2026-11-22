@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "levels": [
+    {
+      "id": "t-1",
+      "pack": "tutorial",
+      "n": 4,
+      "regions": "AABBCABBDAAADDDA",
+      "solution": [
+        2,
+        0,
+        3,
+        1
+      ],
+      "tech": 1,
+      "steps": 4,
+      "teach": "tut_1",
+      "firstHint": {
+        "tech": 1,
+        "area": {
+          "type": "region",
+          "index": 2
+        },
+        "place": [
+          [
+            1,
+            0
+          ]
+        ],
+        "eliminate": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "id": "t-2",
+      "pack": "tutorial",
+      "n": 5,
+      "regions": "AABBBAAACCAAACCDDECCDDDDC",
+      "solution": [
+        3,
+        1,
+        4,
+        2,
+        0
+      ],
+      "tech": 1,
+      "steps": 5,
+      "teach": "tut_2",
+      "firstHint": {
+        "tech": 1,
+        "area": {
+          "type": "region",
+          "index": 4
+        },
+        "place": [
+          [
+            3,
+            2
+          ]
+        ],
+        "eliminate": [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            4,
+            3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "t-3",
+      "pack": "tutorial",
+      "n": 6,
+      "regions": "AABBCCABBBBBADBBEEADDBEEADDEEEFFDEEE",
+      "solution": [
+        5,
+        3,
+        0,
+        2,
+        4,
+        1
+      ],
+      "tech": 2,
+      "steps": 8,
+      "teach": "tut_3",
+      "firstHint": {
+        "tech": 2,
+        "area": {
+          "type": "region",
+          "index": 2
+        },
+        "place": [],
+        "eliminate": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ]
+      }
+    }
+  ]
+}
