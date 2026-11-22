@@ -4,7 +4,7 @@
 - run: 45013328061 (https://github.com/ttuncaydemirr-beep/mozaik-mantik/actions/runs/45013328061)
 - analyze+test: success
 - build: success
-- emulator-smoke: failure
+- emulator-smoke: success
 - flutter: 3.44.0
 ```
 pid=YOK
