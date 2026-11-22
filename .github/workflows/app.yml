@@ -11,6 +11,19 @@ on:
       - "design/fonts/**"
       - ".github/workflows/app.yml"
   workflow_dispatch:
+    inputs:
+      play:
+        description: "AAB'yi Google Play'e yükle"
+        type: boolean
+        default: false
+      track:
+        description: "Play kanalı (internal | alpha = kapalı test)"
+        type: string
+        default: internal
+      status:
+        description: "Sürüm durumu (taslak uygulamada yalnız draft kabul edilir)"
+        type: string
+        default: draft
 
 concurrency:
   group: app-${{ github.ref }}
@@ -67,12 +80,28 @@ jobs:
           cache: true
       - run: flutter pub get
         working-directory: app
-      - name: Release APK (anahtar yoksa debug imza)
-        run: flutter build apk --release
+      - name: Yükleme anahtarını çöz (varsa)
+        env:
+          SIGNING_PASSPHRASE: ${{ secrets.SIGNING_PASSPHRASE }}
+        run: |
+          if [ -f app/android/upload-keystore.jks.enc ] && [ -n "$SIGNING_PASSPHRASE" ]; then
+            openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -pass env:SIGNING_PASSPHRASE \
+              -in app/android/upload-keystore.jks.enc -out app/android/app/upload-keystore.jks
+            umask 077
+            printf 'storeFile=upload-keystore.jks\nkeyAlias=upload\nstorePassword=%s\nkeyPassword=%s\n' "$SIGNING_PASSPHRASE" "$SIGNING_PASSPHRASE" > app/android/key.properties
+            echo "Gerçek yükleme anahtarıyla imzalanacak."
+          else
+            echo "::warning::Yükleme anahtarı yok; debug imza kullanılacak (Play'e yüklenemez)."
+          fi
+      - name: Release APK
+        run: flutter build apk --release --build-number=${{ github.run_number }}
         working-directory: app
       - name: Release AAB
-        run: flutter build appbundle --release
+        run: flutter build appbundle --release --build-number=${{ github.run_number }}
         working-directory: app
+      - name: Anahtar dosyalarını sil
+        if: always()
+        run: rm -f app/android/app/upload-keystore.jks app/android/key.properties
       - name: Boyutlar
         run: ls -l app/build/app/outputs/flutter-apk/*.apk app/build/app/outputs/bundle/release/*.aab
       - uses: actions/upload-artifact@v4
@@ -166,3 +195,22 @@ jobs:
             git push origin HEAD:ci-ciktilar && break
             git pull -q --rebase origin ci-ciktilar || true
           done
+
+  play-upload:
+    name: Google Play'e yükle
+    needs: [build, emulator-smoke]
+    if: github.event_name == 'workflow_dispatch' && inputs.play && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: aab
+          path: aab
+      - uses: r0adkll/upload-google-play@v1
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.PLAY_SERVICE_ACCOUNT_JSON }}
+          packageName: ${{ env.PKG }}
+          releaseFiles: aab/app-release.aab
+          track: ${{ inputs.track }}
+          status: ${{ inputs.status }}

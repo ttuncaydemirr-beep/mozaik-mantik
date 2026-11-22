@@ -19,3 +19,4 @@ app/.flutter-plugins*
 app/.packages
 app/.metadata
 app/.idea/
+app/android/app/upload-keystore.jks
