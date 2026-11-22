@@ -1,0 +1,42 @@
+name: core (mozaik_core Dart paketi)
+
+on:
+  push:
+    branches: ['**']
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: packages/mozaik_core
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Altın fikstürler JS kaynağıyla güncel mi
+        working-directory: .
+        run: |
+          node tools/golden.js
+          git diff --stat --exit-code -- packages/mozaik_core/test/golden
+
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: '3.13.7'
+
+      - name: dart pub get
+        run: dart pub get
+
+      - name: dart analyze
+        run: dart analyze --fatal-infos
+
+      - name: dart test
+        run: dart test -r expanded
+
+      - name: Performans (findHint 10x10)
+        run: dart test test/perf_test.dart -r expanded
