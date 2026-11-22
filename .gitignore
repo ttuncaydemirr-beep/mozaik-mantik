@@ -8,3 +8,14 @@ key.properties
 app/build/
 app/.dart_tool/
 packages/*/.dart_tool/
+app/android/local.properties
+app/android/.gradle/
+app/android/gradle/wrapper/gradle-wrapper.jar
+app/android/gradlew
+app/android/gradlew.bat
+app/android/captures/
+app/pubspec.lock
+app/.flutter-plugins*
+app/.packages
+app/.metadata
+app/.idea/
