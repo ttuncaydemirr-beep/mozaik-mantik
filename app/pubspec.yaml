@@ -1,0 +1,39 @@
+name: mozaik_mantik
+description: "Mozaik Mantık - Demir Games Studio"
+publish_to: "none"
+version: 0.1.0+1
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  # Saf Dart oyun çekirdeği (dart-mantik dalında yazılıyor). Paket main'e
+  # girince aşağıdaki satırın yorumunu kaldır:
+  # mozaik_core: {path: ../packages/mozaik_core}
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/i18n/
+    - assets/fonts/OFL-Onest.txt
+    - assets/fonts/OFL-ElMessiri.txt
+    - assets/fonts/OFL-NotoKufiArabic.txt
+  fonts:
+    - family: Onest
+      fonts:
+        - asset: assets/fonts/Onest-VF.ttf
+    - family: El Messiri
+      fonts:
+        - asset: assets/fonts/ElMessiri-VF.ttf
+    - family: Noto Kufi Arabic
+      fonts:
+        - asset: assets/fonts/NotoKufiArabic-VF.ttf
